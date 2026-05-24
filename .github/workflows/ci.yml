@@ -20,9 +20,11 @@ jobs:
           - 9000:9000
           - 8123:8123
     container:
-      image: ghcr.io/dwh-course-examples/dbt_clickhouse_lab:ci
+      image: python:3.10-slim
     steps:
       - uses: actions/checkout@v3
+      - name: Install dbt-clickhouse
+        run: pip install dbt-clickhouse
       - run: dbt --version
       - run: dbt debug --target ci
       - run: dbt deps --target ci
