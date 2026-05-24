@@ -20,4 +20,4 @@ clickhouse_starschema:
       port: 8123
       schema: default
       threads: 4
-  target: ci
+  target: dev
